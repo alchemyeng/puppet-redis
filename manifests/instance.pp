@@ -331,6 +331,9 @@ define redis::instance(
       /^2.8./: {
         File[$redis_file_name_orig] { content => template('redis/redis.conf.2.8.erb') }
       }
+      /^4.0./: {
+        File[$redis_file_name_orig] { content => template('redis/redis.conf.4.0.erb') }
+      }
       default: {
         File[$redis_file_name_orig] { content => template($conf_template) }
       }
