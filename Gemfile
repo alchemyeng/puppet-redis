@@ -43,9 +43,11 @@ group :development do
 end
 
 group :system_tests do
-  gem "beaker", '2.41.0', :require => false
-  gem "beaker-rspec", '5.6.0', :require => false
+  gem "beaker"
+  gem "beaker-rspec"
   gem 'beaker-puppet_install_helper',  :require => false
+  gem 'simp-beaker-helpers', :git => 'https://github.com/petems/rubygem-simp-beaker-helpers'
+  gem 'simp-rake-helpers'
 end
 
 ENV['PUPPET_GEM_VERSION'].nil? ? puppetversion = '~> 4.0' : puppetversion = ENV['PUPPET_GEM_VERSION'].to_s
