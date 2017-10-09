@@ -52,6 +52,7 @@
 # @param [String] maxmemory_samples   Select as well the sample size to check.
 # @param [String] min_slaves_max_lag   The lag in seconds
 # @param [String] min_slaves_to_write   Minimum number of slaves to be in "online" state
+# @param [String] minimum_version   Minimum version of redis needed for config compatibility
 # @param [String] no_appendfsync_on_rewrite   If you have latency problems turn this to 'true'. Otherwise leave it as
 # @param [String] notify_keyspace_events   Which events to notify Pub/Sub clients about events happening
 # @param [String] notify_service   You may disable service reloads when config files change if you
@@ -178,6 +179,7 @@ class redis (
   $maxmemory_samples             = $::redis::params::maxmemory_samples,
   $min_slaves_max_lag            = $::redis::params::min_slaves_max_lag,
   $min_slaves_to_write           = $::redis::params::min_slaves_to_write,
+  $minimum_version               = $::redis::params::minimum_version,
   $no_appendfsync_on_rewrite     = $::redis::params::no_appendfsync_on_rewrite,
   $notify_keyspace_events        = $::redis::params::notify_keyspace_events,
   $notify_service                = $::redis::params::notify_service,
