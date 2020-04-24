@@ -39,10 +39,6 @@ class redis::config {
     }
   }
 
-  if $redis::ulimit {
-    contain redis::ulimit
-  }
-
   $service_provider_lookup = fact('service_provider')
 
   unless $facts['os']['family'] == 'Debian' or $service_provider_lookup == 'systemd' {

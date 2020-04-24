@@ -406,4 +406,8 @@ define redis::instance (
 
   File[$redis_file_name_orig] { content => template($conf_template) }
 
+  if $redis::ulimit {
+    contain redis::ulimit
+  }
+
 }
